@@ -12,12 +12,14 @@
 
 <body>
     <header>
-
+        <!--Krydset til burgermenuen der både skjules og formeres alt efter om det er blevet trykket på-->
         <div class="menubutton">
             <div class="bar bar1"></div>
             <div class="bar bar2"></div>
             <div class="bar bar3"></div>
         </div>
+
+        <!--  indeholdet i burgermenuen som er skjult når det ikke er aktiveret      -->
         <nav class="hidden">
             <ul class="menu">
                 <li class="menuitem"><a href="index.html">Forside</a></li>
@@ -26,6 +28,8 @@
                 <li class="menuitem"><a href="mailto:fakerestaurant@gmail.com" target="_blank"> Bestil bord</a></li>
             </ul>
         </nav>
+
+        <!-- resturantens overskrift -->
         <div id="overskrift">
             <h1> Restaurant</h1>
             <h2> Chido</h2>
@@ -33,7 +37,7 @@
 
     </header>
 
-
+    <!-- Forsidebilledet og logoet -->
     <section id="splash">
         <picture>
             <img src="billeder/forsidebillede.png" alt="splash image">
@@ -49,6 +53,7 @@
 
     </section>
 
+    <!--   menu med knapper til filtrering alt efter retten der ønskes at blive vist-->
     <section id=menulinje>
         <h1 id="menu_tekst"> Menu</h1>
         <nav>
@@ -61,8 +66,12 @@
         </nav>
     </section>
 
+    <!-- modalvinduet er skjult end til der trykkes og det bliver aktiveret -->
     <section id="modal">
+        <!-- knap lavet ved hjælp af button tag, med formål at kunne lukke ned for modalview når den er klikket på-->
         <button>Close</button>
+
+        <!--  denne indeholder alt rettens information     -->
         <div id="modal-content">
             <h2 class="modal-navn"> </h2> <br>
             <p class="modal-beskrivelse"></p> <br>
@@ -71,20 +80,31 @@
         </div>
     </section>
 
+    <!-- section til at vise alle retterne  -->
     <section class="ret-display"> </section>
+
+    <!-- template til visning af den enkelte rets beskrivelse, pris og navn   -->
     <template class="ret-template">
      <article>
+
+<!-- h2 til rettens navn-->
          <h2 class="ret-navn"> </h2>
+
+         <!--   p-tag til rettens beskrivelse-->
          <p class="ret-beskrivelse"> </p>
          <br>
+
+         <!--        p-tag til rettens pris-->
          <p class="ret-pris"></p>
+
+         <!--        p-tag til rettens kategori-->
          <p class="ret-kategori"> </p>
 
 
      </article>
 
     </template>
-
+    <!--       footer til restaurantens informationer-->
     <footer>
         <section id="informationer">
             <h1> Oplysninger</h1>

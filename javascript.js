@@ -1,10 +1,14 @@
 $(window).on("load", sidenVisses);
 
+/* funcktionen starter når siden er loadet
+når der trykkes på burgermenuens kryds går den til funktion trykPåMenubutton */
 function sidenVisses() {
     console.log("sidenvises");
     $(".menubutton").on("click", trykPåMenubutton);
 }
 
+/*funcktionen starter når der trykkes på burgemenuen
+funktionen skjuler den midterste streg og viser burgermuens indhold*/
 function trykPåMenubutton() {
     console.log("tryk på menubutton");
     $("nav").toggleClass("hidden");
@@ -12,10 +16,14 @@ function trykPåMenubutton() {
 }
 
 let modal = document.querySelector("#modal");
+
+/*variabel til indlæsning af retter  */
 let retter = [];
+
+/*variabler som viser hvilken egenskab der filtreres på */
 let kategoriFilter = "alle";
 
-
+/*starter når DOM-indholdet er loadet */
 document.addEventListener("DOMContentLoaded", start);
 
 function start() {
