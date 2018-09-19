@@ -13,10 +13,14 @@
     box-sizing: inherit;
 }
 
-#menu_tekst {
+/*Kode til skrift*/
+
+h1 {
     font-family: 'Roboto Slab', serif;
     font-weight: bolder;
-    font-size: 3em;
+    font-size: 2em;
+    margin-bottom: 0.5vw;
+    margin-left: 1vw;
     color: #ea4c8c;
 }
 
@@ -33,37 +37,42 @@ p {
     margin-bottom: 1vw;
 }
 
+
 span {
     font-family: 'Roboto Mono', monospace;
     color: black;
 }
 
-
+/*Grid kode med 2 colums der hver er 1 fr
+4 rows med forskellige størrelser */
 
 body {
-    background-color: #f0e8aa;
+    background-color: #efefef;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 10% 40% 15% 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 20% 40% 15% 1fr 5%;
 }
 
 header {}
 
-
-.logo {
-    width: 20vh;
-    height: 20vh;
-    margin-left: 3vw;
-    margin-top: -6.5vw;
-    position: relative;
-    left: 20px;
+#overskrift h1 {
+    margin-left: 0vw;
+    text-align: center;
+    margin-top: -4vw;
+    font-size: 2em;
 
 }
 
-.logo li {
-
-    list-style-type: none;
+#overskrift h2 {
+    text-align: center;
+    margin-top: -1vw;
+    margin-bottom: 0.1vw;
+    font-size: 2em;
+    font-family: 'Nunito', sans-serif;
 }
+
+
+
 
 /*Navigation*/
 
@@ -98,6 +107,10 @@ nav a {
 
     position: relative;
     z-index: 10;
+    margin-top: 1vw;
+    margin-left: 1vw;
+
+
 }
 
 .bar {
@@ -141,21 +154,45 @@ nav {
     transform: translate(0);
     transform-origin: top;
     transition: transform 5s;
+    z-index: 11;
 }
 
 
 
-#splash img {
-    height: 75vw;
+/*her placere jeg logoet på mit splash billede og fjerne liste stilen*/
+
+#splash .logo img {
+    width: 15vw;
+    height: 15vw;
+    right: -9px;
+    top: 15px;
+    transform: rotate(20deg);
+    position: absolute;
+
+}
+
+#splash .logo li {
+
+    list-style-type: none;
+}
+
+
+/*Her bestemmer jeg størrelsen på mit splash billede*/
+
+#splash picture img {
+    height: auto;
     width: 100vw;
-    z-index: 10;
+
 }
 
 #splash {
     grid-column-start: 1;
     grid-column-end: 2;
     grid-row-start: 2;
+    position: relative;
 }
+
+/*Her styler jeg min anden menulinje til mine retter*/
 
 #menulinje {
     grid-column-start: 1;
@@ -164,13 +201,13 @@ nav {
 }
 
 #menulinje nav {
-    background-color: #d7e4a8;
+    background-color: #b5b5b5;
 }
 
 #menulinje button {
     height: 30px;
     width: auto;
-    background-color: rgb(217, 227, 181);
+    background-color: #b2b2b2;
     border: none;
     margin-right: 3px;
     margin-left: 3px;
@@ -180,7 +217,6 @@ nav {
     text-align: center;
     font-size: 15px;
 }
-
 
 /* Css til modal vindue*/
 
@@ -196,18 +232,28 @@ nav {
     display: none;
 }
 
+#modal button {
+    height: 25px;
+    width: 60px;
+    background-color: white;
+    margin-top: 1vw;
+    font-family: 'Roboto Slab', serif;
+}
+
 #modal-content {
     width: 70vw;
     height: 70vh;
-    background-color: #DE5F19;
+    background-color: rgba(222, 95, 25, 0.85);
     margin: auto;
 }
 
 
 .modal-billede {
-    height: 35vh;
+    height: 40vh;
+
     object-fit: scale-down;
 }
+
 
 #modal.vis {
     opacity: 1;
@@ -215,27 +261,62 @@ nav {
     display: block;
 }
 
+/* her laver jeg css til hvordan mine retter de skal styles*/
+
 .ret-display {
     display: grid;
     grid-column-start: 1;
     grid-column-end: 2;
     grid-row-start: 5;
 
-    grid-template-columns: repeat(3, 1fr);
+    background-image: url(billeder/bagrund.png);
 }
+
+
+
+@media screen and (min-width: 830px) {
+    .ret-display {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+}
+
 
 .ret-display p {
     margin-left: 20px;
+
+}
+
+.ret-display p:hover {
+    font-family: 'Roboto Mono', monospace;
+    color: white;
+    margin-bottom: 1vw;
 }
 
 .ret-display h2 {
     margin-left: 20px;
+
 }
 
+footer {
+    background-color: #efefef;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 6;
+}
 
-#om-billeder {
-    width: 2vw;
-    grid-column-start: 2;
-    grid-column-end: 2;
-    grid-row-start: 5;
+.informationer {
+    text-align: center;
+}
+
+footer h1 {
+    font-size: 1.2em;
+    margin: 0.5vw;
+    text-align: center;
+}
+
+footer p {
+    font-size: 0.7em;
+    margin: 0.5vw;
+    text-align: center;
 }
